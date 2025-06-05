@@ -1,0 +1,57 @@
+.page-columns {
+    &__col {
+        > img,
+        > .iframe-wrapper {
+            &:only-child,
+            &:first-child {
+                @include responsive-values('margin-top', 80, 47, '', 'sm');
+                @include responsive-values('margin-bottom', 72, 49, '', 'sm');
+            }
+        }
+
+        > h1,
+        > h2,
+        > h3,
+        > h4,
+        > h5,
+        > h6 {
+            + .iframe-wrapper {
+                @include media-breakpoint-down(sm) {
+                    margin-top: 0;
+                }
+            }
+        }
+
+        > .content-image {
+            @include responsive-values('margin-top', 80, 47, '', 'sm');
+            @include responsive-values('margin-bottom', 72, 49, '', 'sm');
+
+            + .content-image {
+                @include media-breakpoint-down(sm) {
+                    margin-top: rem(-49);
+                }
+            }
+
+            &:last-child {
+                @include media-breakpoint-down(sm) {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+
+    &:not(:first-child) {
+        .page-columns__col {
+            > h1,
+            > h2,
+            > h3,
+            > h4,
+            > h5,
+            > h6 {
+                &:first-child {
+                    @include responsive-values('margin-top', 79, 47);
+                }
+            }
+        }
+    }
+}

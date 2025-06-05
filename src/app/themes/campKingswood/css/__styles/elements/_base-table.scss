@@ -1,0 +1,124 @@
+/* BASE TABLES */
+#page {
+	.tablepress-table-name {
+		font-size: rem(24);
+		line-height: rem(28);
+		letter-spacing: rem(1.5);
+		text-transform: none;
+	}
+
+	.tablepress {
+		padding: 0 rem(20) 0 0;
+		margin: rem(33) 0 rem(33);
+		white-space: normal;
+
+		@include media-breakpoint-down(sm) {
+			margin: rem(25) 0;
+		}
+
+		caption {
+			display: none;
+		}
+
+		thead {
+			th {
+				padding: rem(12) rem(19);
+				position: relative;
+				font-size: rem(16);
+                line-height: rem(24);
+				font-weight: 700;
+				color: #000000;
+				border: none;
+				background-color: transparent;
+				border-bottom: rem(1) solid $gray-88;
+
+                @include media-breakpoint-down(sm) {
+                    font-size: rem(14);
+                    line-height: rem(16);
+                }
+
+				br {
+					display: none;
+				}
+			}
+
+			tr {
+				border: none;
+			}
+		}
+
+		tbody {
+			td {
+				padding: rem(15) rem(19) rem(12);
+				position: relative;
+				font-size: rem(16);
+				line-height: rem(20);
+				color: #000000;
+				border: 0;
+                background-color: transparent !important;
+
+				@include media-breakpoint-down(sm) {
+					padding: rem(17) rem(90) rem(17) rem(21);
+                    font-size: rem(14);
+                    line-height: rem(16);
+				}
+			}
+
+			tr {
+				position: relative;
+				border-bottom: rem(1) solid $gray-88;
+
+				&.even {
+                    td {
+                        background: $gray-97 !important;
+                    }
+				}
+			}
+		}
+	}
+
+    h2 + .tablepress-scroll-wrapper {
+        .tablepress {
+            margin-top: 0;
+        }
+    }
+
+	.tablepress-scroll-wrapper {
+		position: relative;
+		margin-right: rem(-20);
+		margin: rem(33) 0 rem(33);
+
+        > .tablepress {
+            margin: 0;
+        }
+
+        + p:empty {
+            display: none;
+        }
+
+		&.has-scroll {
+			.tablepress {
+				display: block;
+				overflow-x: auto;
+			}
+
+			&::before {
+				content: "";
+				pointer-events: none;
+				display: block;
+				width: rem(115);
+				position: absolute;
+				z-index: 2;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				background: linear-gradient(
+					to right,
+					rgba($body-color, 0) 0%,
+					$body-color 100%
+				);
+			}
+		}
+	}
+}
+

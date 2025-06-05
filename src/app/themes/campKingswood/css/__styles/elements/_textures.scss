@@ -1,0 +1,17 @@
+.rectangle-bg {
+    width: calc(100% + #{rem(5)});
+    height: calc(100% + #{rem(3)});
+    background-image: url('../images/textures/rectangle-bg.svg');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+
+    @include responsive-values('bottom', -30, -14, '', 'sm');
+    @include responsive-values('right', -30, -12, '', 'sm');
+}
+
+.paper-bg {
+    background-image: url('../images/textures/paperbg.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-color: $dark-blue;
+}

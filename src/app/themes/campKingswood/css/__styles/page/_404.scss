@@ -1,0 +1,11 @@
+.page-404 {
+    padding: 15rem 0;
+
+    @include media-breakpoint-down(sm) {
+        padding: 5rem 0;
+    }
+
+    &__heading {
+        text-transform: uppercase;
+    }
+}

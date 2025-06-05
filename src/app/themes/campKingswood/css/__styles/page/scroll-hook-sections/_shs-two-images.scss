@@ -1,0 +1,84 @@
+.shs-two_images {
+    padding-top: rem(52);
+    padding-bottom: 13.57vw;
+
+    @include media-breakpoint-down(sm) {
+        padding: 0;
+    }
+
+    .shs-image-1 {
+        @include media-breakpoint-up(md) {
+            top: 0;
+            right: 0;
+            bottom: 14vw;
+            width: 56.5%;
+            z-index: -1;
+        }
+    }
+
+    .shs-image-2 {
+        @include media-breakpoint-up(md) {
+            bottom: 0;
+            right: 17.5%;
+            left: calc(58.5% - #{rem(108)});
+            z-index: 2;
+            height: 21.726vw;
+        }
+
+        @include media-breakpoint-down(sm) {
+            width: 62.5%;
+            flex: 0 0 62.5%;
+            margin-left: rem(12);
+            margin-top: -18%;
+        }
+    }
+
+    .shs-decoration {
+        background-color: $orange-3;
+        z-index: -1;
+        left: rem(-54);
+        bottom: rem(-38);
+        top: rem(110);
+        width: 100%;
+        border-radius: rem(188) 0 0 0;
+        overflow: hidden;
+
+        @include media-breakpoint-down(md) {
+            top: 100%;
+            border-radius: 0;
+            bottom: rem(-80);
+        }
+
+        @include media-breakpoint-down(sm) {
+            bottom: rem(28);
+            border-radius: 0;
+            left: 0;
+            top: auto;
+            height: 45vw;
+            min-height: rem(155);
+            max-height: rem(300);
+        }
+        
+        &:before,
+        &:after {
+            content: '';
+            display: block;
+            position: absolute;
+            left: 0;
+            width: 100%;
+            top: 0;
+        }
+
+        &:before {
+            z-index: 2;
+            background-color: $orange-1;
+            bottom: 71%;
+        }
+
+        &:after {
+            z-index: 1;
+            background-color: $orange-2;
+            bottom: 38%;
+        }
+    }
+}

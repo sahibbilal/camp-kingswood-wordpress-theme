@@ -1,0 +1,16 @@
+.post-container {
+    z-index: 2;
+    position: relative;
+    min-height: rem(400);
+
+    @include media-breakpoint-down(sm) {
+        z-index: 7;
+    }
+
+    @include responsive-values('padding-bottom', 100, 100);
+
+    + .block-home-cta {
+        z-index: 1;
+        @include responsive-values('margin-top', -270, -270);
+    }
+}

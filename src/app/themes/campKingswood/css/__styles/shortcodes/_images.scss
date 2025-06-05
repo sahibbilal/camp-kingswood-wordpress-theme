@@ -1,0 +1,76 @@
+.page-fullwidth-image {
+    @include responsive-values('padding-top', 80, 47, '', 'sm');
+    @include responsive-values('padding-bottom', 72, 49, '', 'sm');
+
+	&__wrapper {
+		@include cf();
+
+		img {
+			width: 100%;
+			margin: 0;
+		}
+	}
+}
+
+.content-image {
+	@include media-breakpoint-down(sm) {
+		& + & {
+			padding-top: rem(15);
+		}
+	}
+
+	&__align-left,
+	&__align-right {
+		width: 50%;
+
+		@include media-breakpoint-down(sm) {
+			width: 100%;
+		}
+	}
+
+	&__align-left {
+		float: left;
+
+		@include media-breakpoint-down(sm) {
+			float: none;
+		}
+
+		&.spacing-normal {
+			padding-right: rem(15);
+
+			@include media-breakpoint-down(sm) {
+				padding: 0 0 rem(15);
+
+				&:last-child {
+					padding: 0;
+				}
+			}
+		}
+	}
+
+	&__align-right {
+		float: right;
+
+		@include media-breakpoint-down(sm) {
+			float: none;
+		}
+
+		&.spacing-normal {
+			padding-left: rem(15);
+
+			@include media-breakpoint-down(sm) {
+				padding: 0 0 rem(15);
+
+				&:last-child {
+					padding: 0;
+				}
+			}
+		}
+	}
+
+	img {
+		width: 100%;
+		margin: 0;
+	}
+}
+

@@ -1,0 +1,32 @@
+// 1. TEXT
+// ---------------------------------------------
+
+// Regular text
+$font-size-base: 21px;
+$line-height-base: 32px;
+
+// Design sytem colors
+
+$c-error: #b00020;
+$c-warning: #faa614;
+$c-success: #faa614;
+$c-information: #006bb3;
+
+// Font
+$font-base: "raleway", sans-serif;
+$font-sec: "new-spirit", sans-serif;
+
+
+// 2. WORDPRESS
+// ---------------------------------------------
+
+$media-margin: 30px;
+$media-margin-mobile: 20px; 
+
+// Outline
+$outline: rem( 2 ) solid #7aacfe;
+
+// Shadows
+
+$dropshadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+$dropshadow-hover: 0px 16px 24px rgba(0, 0, 0, 0.06);

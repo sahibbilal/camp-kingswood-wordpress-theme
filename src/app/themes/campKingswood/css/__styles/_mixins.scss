@@ -1,0 +1,206 @@
+@mixin cf {
+	&:before,
+	&:after {
+		content: "";
+		display: table;
+	}
+
+	&:after {
+		clear: both;
+	}
+}
+
+@mixin centerer($horizontal: true, $vertical: true) {
+	position: absolute;
+
+	@if ($horizontal and $vertical) {
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+ @else if ($horizontal) {
+		left: 50%;
+		transform: translate(-50%, 0);
+	}
+ @else if ($vertical) {
+		top: 50%;
+		transform: translate(0, -50%);
+	}
+}
+
+@mixin icon-font($content: "", $font-size: 24px) {
+	content: $content;
+	font-family: $font-iconfont;
+	font-size: $font-size;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+@mixin pseudo($display: block, $pos: absolute, $content: "") {
+	content: $content;
+	display: $display;
+	position: $pos;
+}
+
+@mixin responsive-ratio($x, $y, $pseudo: false) {
+	$padding: unquote(($y / $x) * 100 + "%");
+
+	@if $pseudo {
+		&:before {
+			@include pseudo($pos: relative);
+			width: 100%;
+			padding-top: $padding;
+		}
+	}
+ @else {
+		padding-top: $padding;
+	}
+}
+
+@mixin truncate($truncation-boundary) {
+	max-width: $truncation-boundary;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+@mixin container-spacing($side) {
+	@if $side == "left" {
+		padding-left: calc((50vw - 1290px / 2));
+
+		@include media-breakpoint-down(xl) {
+			padding-left: 15px;
+		}
+	}
+ @else if $side == "right" {
+		padding-right: calc((50 - 1290px / 2));
+
+		@include media-breakpoint-down(xl) {
+			padding-right: 15px;
+		}
+	}
+}
+
+@mixin force-gpu-acc {
+	backface-visibility: hidden;
+	-webkit-perspective: 1000;
+	perspective: 1000;
+	-webkit-backface-visibility: hidden;
+	-webkit-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+}
+
+// Mixin for VW size pixels declaration on specific breakpoint vw-size(16px, 1200) - 16px on 1200 width breakpoint
+@function vw-size($s, $w: 1440) {
+	@return ($s / $w) * 100 + vw;
+}
+
+@function rem($sizeValue: 16) {
+	@return $sizeValue / 10 + rem;
+}
+
+@function rel($size, $rel) {
+	@return $size / $rel;
+}
+
+@function em($size, $rel) {
+	@return rel($size, $rel) * 1em;
+}
+
+@mixin font($fontSize, $lineHeight) {
+	font-size: rem($fontSize);
+	line-height: rel($lineHeight, $fontSize);
+}
+
+@mixin font-px($fontSize, $lineHeight) {
+	font-size: $fontSize * 1px;
+	line-height: rel($lineHeight, $fontSize);
+}
+
+// Detect ie11
+@mixin ie11() {
+	@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+		@content;
+	}
+}
+
+// Detect firefox
+@mixin firefox() {
+	@-moz-document url-prefix() {
+		@content;
+	}
+}
+
+// Detect Safari
+@mixin safari() {
+	@media screen and (-webkit-min-device-pixel-ratio: 0) {
+		@content;
+	}
+}
+
+@mixin transition-delay($count) {
+	@for $i from 1 through $count {
+		&:nth-child(#{$i}
+) {
+			transition-delay: #{$i * 0.025}
+s;
+		}
+	}
+}
+
+@mixin responsive-values($attribute, $max, $min, $important: '', $smallest: 'xs', $include_xl: '') {
+    $divider: 5;
+
+    @if ($smallest == 'lg') {
+        $divider: 2;
+    } @else if ($smallest == 'md') {
+        $divider: 3;
+    } @else if ($smallest == 'sm') {
+        $divider: 4;
+    }
+
+    $step-size: ($max - $min) / $divider;
+
+    @if ($important == true) {
+        $important: ' !important';
+    }
+    
+    #{$attribute}: rem($max)#{$important};
+
+    @if ($max != $min) {
+        @if ($include_xl == true) {
+            @if ($smallest == 'xs' or $smallest == 'sm' or $smallest == 'md' or $smallest == 'lg') {
+                @include media-breakpoint-down(xl) {
+                    #{$attribute}: rem($max - $step-size * .75)#{$important};
+                }
+            }
+        }
+
+        @if ($smallest == 'xs' or $smallest == 'sm' or $smallest == 'md') {
+            @include media-breakpoint-down(lg) {
+                #{$attribute}: rem($max - $step-size)#{$important};
+            }
+        }
+
+        @if ($smallest == 'xs' or $smallest == 'sm') {
+            @include media-breakpoint-down(md) {
+                #{$attribute}: rem($max - $step-size * 2)#{$important};
+            }
+        }
+        
+        @if ($smallest == 'xs') {
+            @include media-breakpoint-down(sm) {
+                #{$attribute}: rem($max - $step-size * 3)#{$important};
+            }
+        }
+
+        @include media-breakpoint-down($smallest) {
+            #{$attribute}: rem($min)#{$important};
+        }
+    }
+}

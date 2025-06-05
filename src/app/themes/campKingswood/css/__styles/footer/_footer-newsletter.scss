@@ -1,0 +1,54 @@
+.main-footer__newsletter {
+	form {
+		display: flex;
+        flex-direction: column;
+
+		label {
+			@extend .visually-hidden;
+		}
+
+		.gform_fields {
+			display: flex !important;
+            flex-direction: column;
+		}
+
+		.gform_body {
+			flex: 1 0 auto;
+
+			@include media-breakpoint-down(lg) {
+				width: 100%;
+			}
+		}
+
+		.select2-container {
+			width: 100% !important;
+		}
+
+		.ginput_container {
+			margin: 0 !important;
+		}
+
+		.gfield {
+			padding: 0 !important;
+            margin-bottom: rem(8) !important;
+		}
+
+		.validation_error {
+			flex: 0 0 100%;
+		}
+
+		.gform_footer {
+            margin: rem(8) 0 0 0 !important;
+            
+			input[type="submit"] {
+                width: 100%;
+            }
+		}
+	}
+
+	.validation_message,
+	.validation_error,
+	.gform_confirmation_wrapper .gform_confirmation_message {
+		color: $white;
+	}
+}

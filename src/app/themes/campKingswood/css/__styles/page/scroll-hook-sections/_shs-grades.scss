@@ -1,0 +1,81 @@
+.shs-grades {
+    padding-top: rem(92);
+    padding-bottom: rem(37);
+
+    @include media-breakpoint-down(sm) {
+        padding: 0;
+    }
+
+    .shs-image-1 {
+        @include media-breakpoint-up(md) {
+            top: rem(56);
+            right: 0;
+            bottom: 0;
+            width: 61.25%;
+            z-index: -1;
+        }
+
+        @include media-breakpoint-down(sm) {
+            height: 92.5vw !important;
+        }
+    }
+
+    .shs-decoration {
+        background-color: $orange;
+        z-index: -1;
+        left: 10%;
+        right: 0;
+        top: 0;
+        bottom: rem(37);
+        width: 100%;
+        border-radius: rem(250) 0 0 rem(250);
+        overflow: hidden;
+
+        @include media-breakpoint-down(sm) {
+            display: none;
+        }
+    }
+
+    .shs-content {
+        position: static;
+    }
+}
+
+.shs-grade-links {
+    padding: 0;
+    list-style: none;
+    margin: 0;
+    column-count: 2;
+    column-gap: rem(15);
+    column-width: auto;
+
+    p + & {
+        margin-top: rem(33);
+    }
+
+    + .c-btn {
+        margin-top: rem(15) !important;
+    }
+}
+
+.shs-grade-link-wrapper {
+    break-inside: avoid-column;
+    margin-bottom: rem(29);
+}
+
+.shs-grade-label {
+    @extend .overline;
+
+    margin-bottom: rem(3) !important;
+}
+
+.shs-grade-link {
+    @extend .c-btn;
+    @extend .c-btn-tertiary;
+
+    font-size: rem(20);
+    line-height: rem(32);
+    font-weight: 500;
+    margin: 0 !important;
+    white-space: nowrap;
+}

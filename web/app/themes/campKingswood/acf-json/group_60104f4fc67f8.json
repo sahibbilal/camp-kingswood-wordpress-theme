@@ -1,0 +1,39 @@
+{
+    "key": "group_60104f4fc67f8",
+    "title": "Sub Navigation Item – Fields",
+    "fields": [
+        {
+            "key": "field_60104f7a13726",
+            "label": "Icon",
+            "name": "icon",
+            "type": "icon-picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "allow_null": true
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "nav_menu_item",
+                "operator": "==",
+                "value": "location\/sub-navigation"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "modified": 1611682068
+}

@@ -1,0 +1,293 @@
+/* Happy rems pattern - 1rem = 10px */
+html {
+	font-size: 62.5%;
+}
+
+.body-1 {
+	font-size: 2rem;
+	line-height: 1.6;
+	font-weight: 500;
+	margin: 0 0 3.2rem;
+
+	@include media-breakpoint-down(lg) {
+		font-size: clamp(1.6rem, 1.5vw, 2rem);
+	}
+
+	@include media-breakpoint-down(sm) {
+		font-size: 1.6rem;
+		line-height: 2.4rem;
+		margin: 0 0 1.6rem;
+	}
+}
+
+.body-2 {
+	font-size: 1.6rem;
+	line-height: 2.4rem;
+	margin: 0 0 2.4rem;
+
+	@include media-breakpoint-down(sm) {
+		font-size: 1.4rem;
+		margin: 0 0 1.6rem;
+	}
+}
+
+body {
+	font-family: $font-base, sans-serif;
+	margin: 0;
+
+	@extend .body-1;
+}
+
+h1,
+.h1 {
+	font-weight: 700;
+	font-family: $font-sec;
+	margin: 0 0 3.2rem;
+
+    @include responsive-values('font-size', 75, 34, '', 'sm');
+    @include responsive-values('line-height', 92, 40, '', 'sm');
+
+	@include media-breakpoint-down(sm) {
+		margin: 0 0 1.6rem;
+	}
+}
+
+h2,
+.h2 {
+	font-weight: 600;
+	font-family: $font-sec;
+	z-index: 2;
+	position: relative;
+
+    @include responsive-values('font-size', 48, 24, '', 'sm');
+    @include responsive-values('line-height', 56, 32, '', 'sm');
+    @include responsive-values('margin-bottom', 24, 16);
+
+	p + &,
+    .tablepress-scroll-wrapper + &,
+    .tablepress + & {
+        @include responsive-values('margin-top', 80, 48);
+	}
+
+	p.overline + & {
+        @include responsive-values('margin-top', 14, 8);
+	}
+}
+
+h3,
+.h3 {
+	font-size: 2.6rem;
+	line-height: 3.2rem;
+	font-weight: 600;
+
+    @include responsive-values('font-size', 26, 18, '', 'sm');
+    @include responsive-values('line-height', 32, 24, '', 'sm');
+    @include responsive-values('margin-bottom', 16, 10);
+
+	p + &,
+    .tablepress-scroll-wrapper + &,
+    .tablepress + & {
+        @include responsive-values('margin-top', 48, 31);
+	}
+}
+
+h4,
+.h4 {
+	font-weight: 600;
+
+    @include responsive-values('font-size', 20, 18, '', 'sm');
+    @include responsive-values('line-height', 24, 24, '', 'sm');
+    @include responsive-values('margin-bottom', 16, 9);
+
+	p + &,
+    .tablepress-scroll-wrapper + &,
+    .tablepress + & {
+        @include responsive-values('margin-top', 48, 23);
+	}
+}
+
+h5,
+.h5 {
+	font-weight: 600;
+
+    @include responsive-values('font-size', 16, 14, '', 'sm');
+    @include responsive-values('line-height', 24, 16, '', 'sm');
+    @include responsive-values('margin-bottom', 7, 9);
+
+	@include media-breakpoint-down(sm) {
+		font-size: 1.4rem;
+		line-height: 1.6rem;
+	}
+
+	p + &,
+    .tablepress-scroll-wrapper + &,
+    .tablepress + & {
+        @include responsive-values('margin-top', 33, 23);
+	}
+}
+
+h6,
+.h6 {
+	font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: rem(2);
+    line-height: rem(16);
+
+    @include responsive-values('font-size', 14, 11, '', 'sm');
+    @include responsive-values('margin-bottom', 7, 8);
+
+	p + &,
+    .tablepress-scroll-wrapper + &,
+    .tablepress + & {
+        @include responsive-values('margin-top', 33, 24);
+	}
+}
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5 {
+	color: $dark;
+}
+
+li {
+	font-size: 2rem;
+	line-height: 3.2rem;
+	margin: 0 0 1.6rem;
+
+	@include media-breakpoint-down(sm) {
+		font-size: 1.6rem;
+		line-height: 2.4rem;
+	}
+}
+
+.leadparagraph {
+    @include responsive-values('font-size', 34, 20, '', 'sm');
+    @include responsive-values('line-height', 40, 24, '', 'sm');
+
+	margin: 0 0 3.2rem;
+
+	&.align-left {
+		text-align: left;
+	}
+
+	&.align-right {
+		text-align: right;
+	}
+
+	&.align-center {
+		text-align: center;
+	}
+
+	@include media-breakpoint-down(sm) {
+		font-size: 2rem;
+		line-height: 2.4rem;
+		margin: 0 0 2.4rem;
+	}
+}
+
+/* Text Elements */
+p {
+	margin: 0 0 3.2rem;
+
+	&:last-child {
+		margin: 0;
+	}
+
+	@include media-breakpoint-down(sm) {
+		margin: 0 0 1.6rem;
+	}
+
+	ul,
+	ol + & {
+		margin-top: 3.2rem;
+
+		@include media-breakpoint-down(sm) {
+			margin-top: 2.4rem;
+		}
+	}
+}
+
+.subtitle-1 {
+	font-size: 1.6rem;
+	line-height: 2.4rem;
+	margin: 0 0 2.4rem;
+}
+
+.subtitle-2 {
+	font-size: 1.4rem;
+	line-height: 2.4rem;
+	margin: 0 0 2.4rem;
+}
+
+.button-1 {
+	font-weight: 700;
+	font-size: 1.6rem;
+	line-height: 3.2rem;
+}
+
+.button-2 {
+	font-weight: 700;
+	font-size: 1.4rem;
+	line-height: 1.6rem;
+}
+
+.caption,
+figcaption {
+	font-size: 1.2rem;
+	line-height: 1.6rem;
+	margin: 0 0 0.8rem;
+}
+
+.overline {
+	font-size: rem(12);
+	line-height: rem(16);
+	text-transform: uppercase;
+	letter-spacing: rem(1.8);
+	font-weight: 800;
+	font-family: $font-base;
+	margin: 0 0 0.8rem;
+}
+
+strong {
+	font-weight: 700;
+}
+
+/* Horizontal Line */
+hr {
+	border-top: 1px solid $gray-70;
+
+    @include responsive-values('margin-top', 95, 53);
+    @include responsive-values('margin-bottom', 80, 50);
+}
+
+::selection {
+	background: rgba($primary, 0.1);
+}
+
+::-moz-selection {
+	background: rgba($primary, 0.1);
+}
+
+/* Normalize links across browsers */
+a {
+	color: $link-color;
+	text-decoration: none;
+
+	&:hover,
+	&:focus {
+		text-decoration: underline;
+	}
+}
+
+a:focus,
+a:hover {
+	text-decoration: none;
+	color: $link-hover-color;
+}

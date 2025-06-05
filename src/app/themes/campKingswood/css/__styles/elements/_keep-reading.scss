@@ -1,0 +1,87 @@
+.keep-reading {
+  &__button {
+    display: none;
+
+    padding: 0;
+
+    position: relative;
+
+    font-size: 1.6rem;
+    font-weight: 800;
+    line-height: 2.4rem;
+    color: $primary;
+    letter-spacing: 0.5px;
+
+    &:after {
+      content: "";
+
+      display: block;
+
+      width: .9rem;
+      height: .9rem;
+
+      position: absolute;
+      top: .5rem;
+      right: -1.5rem;
+      transform: rotate(135deg);
+
+      border: 2px solid $primary;
+      border-width: 2px 2px 0 0;
+
+      transition: all 0.2s linear;
+    }
+
+    &--mobile {
+      @include media-breakpoint-down(sm) {
+        display: block;
+      }
+    }
+
+    &--both {
+      display: block;
+    }
+
+    &--desktop {
+      display: block;
+
+      @include media-breakpoint-down(sm) {
+        display: none;
+      }
+    }
+  }
+
+  &__content {
+    display: block;
+
+    &--mobile {
+      @include media-breakpoint-down(sm) {
+        display: none;
+      }
+    }
+
+    &--both {
+      display: none;
+    }
+
+    &--desktop {
+      display: none;
+
+      @include media-breakpoint-down(sm) {
+        display: block;
+      }
+    }
+  }
+
+  &.visible {
+    .keep-reading {
+      &__button::after {
+        top: 1rem;
+        transform: rotate(135deg) scale(-1);
+      }
+
+      &__content {
+        display: block;
+      }
+    }
+  }
+}

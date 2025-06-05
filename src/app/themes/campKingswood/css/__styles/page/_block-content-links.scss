@@ -1,0 +1,22 @@
+.block-content-links {
+    @include responsive-values('padding-top', 80, 64);
+    @include responsive-values('padding-bottom', 72, 20);
+
+    > .container {
+        > .row {
+            @include responsive-values('margin-top', -48, 1);
+        }
+    }
+}
+
+.content-link {
+    &__single {
+        @include responsive-values('margin-top', 80, 24);
+
+        &.col-sm-8 {
+            & + & {
+                @include responsive-values('margin-top', 32, 24);
+            }
+        }
+    }
+}

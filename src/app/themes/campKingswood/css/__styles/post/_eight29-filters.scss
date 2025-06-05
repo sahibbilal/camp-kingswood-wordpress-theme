@@ -1,0 +1,302 @@
+.eight29-filter {
+    &.filter-select {
+        h6 {
+
+            + div {
+                margin-top: 0;
+            }
+        }
+    }
+
+    select,
+    input[type=search] {
+        border: none;
+        background-color: $white !important;
+        box-shadow: 0 0 rem(10) rgba($black, 0.08);
+        border-radius: rem(8);
+        letter-spacing: rem(0.5);
+        color: $gray-45;
+        -webkit-appearance: none;
+        font-weight: 600;
+    }
+
+    select {
+        padding-left: rem(12);
+        padding-right: rem(40);
+        background: url("../images/icons/drop-down.svg") no-repeat;
+        background-size: rem(10) rem(5);
+        background-position: right rem(19) top 50%;
+        cursor: pointer;
+    }
+
+    input[type=search] {
+        padding-left: rem(45);
+        background-position: rem(15) 50%;
+    }
+}
+
+.eight29-filter-list {
+    @include media-breakpoint-down(sm) {
+        margin-bottom: rem(20) !important;
+    }
+}
+
+.eight29-posts {
+    @include responsive-values('margin-bottom', 62, 30);
+
+    @include media-breakpoint-down(md) {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: rem(24);
+    }
+
+    @media (max-width: 900px) {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    @include media-breakpoint-down(xs) {
+        grid-template-columns: 1fr;
+    }
+
+    > * {
+        transition: 0.3s opacity linear;
+    }
+
+    &.loading-active {
+        opacity: 1;
+
+        > * {
+            opacity: 0;
+        }
+
+        &:before {
+            @extend .loader:after;
+
+            position: absolute;
+            top: 0;
+            left: calc(50% - #{rem(32)});
+        }
+    }
+}
+
+.eight29-post-card {
+    background-color: $white;
+    border-radius: rem(8);
+    overflow: hidden;
+    
+    .eight29-featured-image {
+        margin-bottom: rem(19) !important;
+        display: block;
+
+        @include media-breakpoint-down(sm) {
+            margin-bottom: rem(12) !important;
+        }
+
+        figure {
+            height: 0;
+            padding-bottom: 56.585365%;
+            position: relative;
+            overflow: hidden;
+
+            img {
+                transition: transform 0.2s ease-in-out;
+                width: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                object-fit: cover;
+            }
+        }
+
+        &:hover {
+            img {
+                transform: scale(1.05);
+            }
+        }
+    }
+}
+
+.eight29-post-body {
+    padding: 0 rem(20) rem(20) rem(20);
+}
+
+.eight29-post-title {
+    @include responsive-values('font-size', 26, 18, true);
+    @include responsive-values('line-height', 32, 24, true);
+
+    font-weight: 700;
+    margin-bottom: 0 !important;
+
+    a {
+        text-decoration: none;
+        border: none !important;
+        color: $dark;
+
+        &:hover,
+        &:focus {
+            color: $primary;
+        }
+    }
+}
+
+.eight29-post-categories {
+    margin-bottom: rem(1);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    > a {
+        display: block;
+        margin-right: rem(8);
+        margin-bottom: rem(6);
+    }
+
+    a {
+        border: 2px solid $primary !important;
+        border-radius: 999px;
+        font-size: rem(12);
+        line-height: rem(16);
+        letter-spacing: rem(2);
+        font-weight: 700;
+        text-transform: uppercase;
+        padding: rem(4) rem(10);
+        text-decoration: none;
+        transition: all 0.2s ease-in-out;
+
+        @include media-breakpoint-down(sm) {
+            padding: rem(3) rem(8);            
+        }
+
+        &:hover,
+        &:focus {
+            background-color: $primary;
+            color: $white !important;
+        }
+    }
+
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        li {
+            margin-right: rem(8);
+            margin-bottom: rem(6);
+        }
+
+        a {
+            display: block;
+        }
+    }
+}
+
+.eight29-pagination-list {
+    padding: 0 rem(10);
+
+    > li {
+        @include media-breakpoint-down(xs) {
+            margin: 0 rem(2) !important;
+        }
+        
+        button {
+            font-weight: 700;
+            height: rem(40);
+            width: rem(40);
+            padding: rem(10);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.2s linear;
+
+            &.current-page {
+                background-color: $primary;
+                color: $white;
+                border: 2px solid $primary;
+
+                &:hover {
+                    background-color: $white;
+                    color: $primary;
+                }
+            }
+
+            &:not(.current-page) {
+                &:hover {
+                    color: $primary;
+                }
+            }
+        }
+
+        &.last-item {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-end;
+
+            &:before {
+                font-weight: 700;
+                padding-bottom: rem(6);
+            }
+        }
+    }
+}
+
+.eight29-pagination-arrow {
+    font-size: 0;
+    color: transparent;
+    position: relative;
+    width: rem(40);
+    height: rem(40);
+
+    @include media-breakpoint-down(xs) {
+        width: rem(30);
+    }
+
+    &:after {
+        content: $icon-chev-right;
+        @extend .icon;
+
+        font-size: rem(26);
+        color: $dark;
+        transition: color 0.2s ease-in-out;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        .eight29-pagination-prev & {
+            content: $icon-chev-left;
+        }
+    }
+
+    &:hover {
+        &:after {
+            color: $primary;
+        }
+    }
+}
+
+.eight29-post-readtime {
+    font-size: rem(12);
+    line-height: rem(16);
+    font-weight: 800;
+    letter-spacing: rem(1.8);
+    text-transform: uppercase;
+    margin-top: rem(13);
+
+    @include media-breakpoint-down(xs) {
+        margin-top: rem(10);
+    }
+}
+
+.eight29-posts-container {
+    &:empty {
+        text-align: center;
+
+        &:after {
+            display: inline-block;
+
+            @extend .loader:after;
+        }
+    }
+}

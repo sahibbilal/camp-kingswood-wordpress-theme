@@ -1,0 +1,162 @@
+.icon {
+    font-family: $font-iconfont;
+	font-size: 24px;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.arrow {
+    position: relative;
+    z-index: 1;
+
+    &:before,
+    &:after {
+        content: '';
+        width: rem(26);
+        height: rem(24);
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        background-position: center center;
+        background-repeat: no-repeat;
+        transform-origin: center right;
+    }
+
+    &:before {
+        //background-image: url('../images/icons/arrow-right-default.svg');
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='26' height='24' fill='%23db3a00' xmlns:v='https://vecta.io/nano'%3E%3Cpath d='M16 2A10.02 10.02 0 0 0 6 12a10.02 10.02 0 0 0 10 10 10.02 10.02 0 0 0 10-10A10.02 10.02 0 0 0 16 2zm0 2c4.43 0 8 3.57 8 8s-3.57 8-8 8-8-3.57-8-8 3.57-8 8-8z' opacity='.5'/%3E%3Cpath d='M14.053 16.394l.947.94L20.334 12l-5.333-5.333-.94.94L18.448 12s5.807-5.808-4.395 4.394z'/%3E%3C/svg%3E");
+        z-index: 1;
+        transition: background-image 0.2s ease-in-out;
+    }
+
+    &:after {
+        //background-image: url('../images/icons/arrow-right-line.svg');
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='26' height='24' fill='%23db3a00' xmlns:v='https://vecta.io/nano'%3E%3Cpath d='M.5 12.667h17.999l.001-1.333H.5z'/%3E%3C/svg%3E");
+        z-index: 2;
+        transition: transform 0.2s ease-in-out;
+    }
+
+    &:hover {
+        &:before {
+            //background-image: url('../images/icons/arrow-right-hover.svg');
+            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='26' height='24' fill='%23db3a00' xmlns:v='https://vecta.io/nano'%3E%3Cpath d='M16 2A10.02 10.02 0 0 0 6 12a10.02 10.02 0 0 0 10 10 10.02 10.02 0 0 0 10-10A10.02 10.02 0 0 0 16 2zm0 2c4.43 0 8 3.57 8 8s-3.57 8-8 8-8-3.57-8-8 3.57-8 8-8zm-1.947 12.394l.947.94L20.334 12l-5.333-5.333-.94.94L18.448 12s5.807-5.808-4.395 4.394z'/%3E%3C/svg%3E");
+        }
+
+        &:after {
+            transform: translateX(-4px) scaleX(0.4);
+        }
+    }
+
+    &.arrow-lg {
+        &:before,
+        &:after {
+            width: rem(36);
+            height: rem(30);
+        }
+
+        &:before {
+            //background-image: url('../images/icons/arrow-lg-right-default.svg');
+            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='30' fill='%23db3a00' xmlns:v='https://vecta.io/nano'%3E%3Cpath d='M 21,0 C 29.278349,0 36,6.7216511 36,15 36,23.278349 29.278349,30 21,30 12.721651,30 6,23.278349 6,15 6,6.7216511 12.721651,0 21,0 Z m 0,1 C 13.262091,1 7,7.2620912 7,15 7,22.737909 13.262091,29 21,29 28.737909,29 35,22.737909 35,15 35,7.2620912 28.737909,1 21,1 Z' opacity='.5'/%3E%3Cpath d='M 21,7 19.580078,8.4101562 25.169922,14 H 0.5 v 2 H 25.169922 L 19.589844,21.589844 21,23 29,15 Z'/%3E%3C/svg%3E");
+        }
+
+        &:after {
+            //background-image: url('../images/icons/arrow-lg-right-line.svg');
+            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='30' fill='%23db3a00' xmlns:v='https://vecta.io/nano'%3E%3Cpath d='M 26,14 H 0.5 v 2 H 26 Z'/%3E%3C/svg%3E");
+        }
+
+        &:hover {
+            &:before {
+                //background-image: url('../images/icons/arrow-lg-right-hover.svg');
+                background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='30' fill='%23db3a00' xmlns:v='https://vecta.io/nano'%3E%3Cpath d='M 21,0 C 29.278349,0 36,6.7216511 36,15 36,23.278349 29.278349,30 21,30 12.721651,30 6,23.278349 6,15 6,6.7216511 12.721651,0 21,0 Z m 0,1 C 13.262091,1 7,7.2620912 7,15 7,22.737909 13.262091,29 21,29 28.737909,29 35,22.737909 35,15 35,7.2620912 28.737909,1 21,1 Z'/%3E%3Cpath d='M 21,7 19.580078,8.4101562 26.17,15 v 0 L 19.589844,21.589844 21,23 29,15 Z'/%3E%3C/svg%3E");
+            }
+
+            &:after {
+                transform: translateX(-4px) scaleX(0.4);
+            }
+        }
+    }
+}
+
+.arrow-white {
+    &:before {
+        //background-image: url('../images/icons/arrow-right-default-white.svg');
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='26' height='24' xmlns:v='https://vecta.io/nano'%3E%3Cpath d='M16 2A10.02 10.02 0 0 0 6 12a10.02 10.02 0 0 0 10 10 10.02 10.02 0 0 0 10-10A10.02 10.02 0 0 0 16 2zm0 2c4.43 0 8 3.57 8 8s-3.57 8-8 8-8-3.57-8-8 3.57-8 8-8z' opacity='.5' fill='%23db3a00'/%3E%3Cpath d='M14.053 16.394l.947.94L20.334 12l-5.333-5.333-.94.94L18.448 12s5.807-5.808-4.395 4.394z' fill='%23fff'/%3E%3C/svg%3E");
+    }
+
+    &:after {
+        //background-image: url('../images/icons/arrow-right-line-white.svg');
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='26' height='24' fill='%23fff' xmlns:v='https://vecta.io/nano'%3E%3Cpath d='M.5 12.667h17.999l.001-1.333H.5z'/%3E%3C/svg%3E");
+    }
+
+    &:hover {
+        &:before {
+            //background-image: url('../images/icons/arrow-right-hover-white.svg');  
+            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='26' height='24' fill='%23fff' xmlns:v='https://vecta.io/nano'%3E%3Cpath d='M16 2A10.02 10.02 0 0 0 6 12a10.02 10.02 0 0 0 10 10 10.02 10.02 0 0 0 10-10A10.02 10.02 0 0 0 16 2zm0 2c4.43 0 8 3.57 8 8s-3.57 8-8 8-8-3.57-8-8 3.57-8 8-8zm-1.947 12.394l.947.94L20.334 12l-5.333-5.333-.94.94L18.448 12s5.807-5.808-4.395 4.394z'/%3E%3C/svg%3E");
+        }
+    }
+
+    &.arrow-lg {
+        &:before {
+            //background-image: url('../images/icons/arrow-lg-right-default-white.svg');
+            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='30' fill='%23db3a00' xmlns:v='https://vecta.io/nano'%3E%3Cpath d='M 21,0 C 29.278349,0 36,6.7216511 36,15 36,23.278349 29.278349,30 21,30 12.721651,30 6,23.278349 6,15 6,6.7216511 12.721651,0 21,0 Z m 0,1 C 13.262091,1 7,7.2620912 7,15 7,22.737909 13.262091,29 21,29 28.737909,29 35,22.737909 35,15 35,7.2620912 28.737909,1 21,1 Z' opacity='.5'/%3E%3Cpath d='M 21,7 19.580078,8.4101562 25.169922,14 H 0.5 v 2 H 25.169922 L 19.589844,21.589844 21,23 29,15 Z' fill='%23fff'/%3E%3C/svg%3E");
+        }
+
+        &:after {
+            //background-image: url('../images/icons/arrow-lg-right-line-white.svg');
+            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='30' fill='%23fff' xmlns:v='https://vecta.io/nano'%3E%3Cpath d='M 26,14 H 0.5 v 2 H 26 Z'/%3E%3C/svg%3E");
+        }
+
+        &:hover {
+            &:before {
+                //background-image: url('../images/icons/arrow-lg-right-hover-white.svg');
+                background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='30' fill='%23fff' xmlns:v='https://vecta.io/nano'%3E%3Cpath d='M 21,0 C 29.278349,0 36,6.7216511 36,15 36,23.278349 29.278349,30 21,30 12.721651,30 6,23.278349 6,15 6,6.7216511 12.721651,0 21,0 Z m 0,1 C 13.262091,1 7,7.2620912 7,15 7,22.737909 13.262091,29 21,29 28.737909,29 35,22.737909 35,15 35,7.2620912 28.737909,1 21,1 Z'/%3E%3Cpath d='M 21,7 19.580078,8.4101562 26.17,15 v 0 L 19.589844,21.589844 21,23 29,15 Z'/%3E%3C/svg%3E");
+            }
+        }
+    }
+}
+
+.arrow-left {
+    &:before,
+    &:after {
+        transform: scaleX(-1);
+    }
+
+    &:hover {
+        &:after {
+            transform: scaleX(-1) translateX(-4px) scaleX(0.4);
+        }
+    }
+}
+
+.sunset {
+    display: inline-block;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-image: url('../images/icons/sunset.svg');
+    height: rem(43);
+    width: rem(235);
+}
+
+.sunset-dark {
+    @extend .sunset;
+
+    background-image: url('../images/icons/sunset-dark.svg');
+}
+
+.quote-circle {
+    border: 3px solid $orange;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include responsive-values('height', 80, 56);
+    @include responsive-values('width', 80, 56);
+    @include responsive-values('font-size', 31, 22);
+}

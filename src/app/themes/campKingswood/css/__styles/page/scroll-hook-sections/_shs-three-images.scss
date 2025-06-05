@@ -1,0 +1,96 @@
+.shs-three_images {
+    padding-top: rem(114);
+    padding-bottom: 13.57vw;
+
+    @include media-breakpoint-down(sm) {
+        padding: 0;
+    }
+
+    .shs-image-1 {
+        @include media-breakpoint-up(md) {
+            top: 0;
+            right: 0;
+            bottom: 14vw;
+            width: 65.1%;
+            z-index: -1;
+        }
+    }
+
+    .shs-image-2 {
+        @include media-breakpoint-up(md) {
+            bottom: rem(82);
+            right: 0;
+            width: calc(29% - #{rem(32)});
+            z-index: 2;
+            height: 19.75vw;
+        }
+
+        @include media-breakpoint-down(sm) {
+            width: 41.5625%;
+            flex: 0 0 41.5625%;
+            text-align: right;
+            margin: -19.75% 0 0 0;
+            order: 4;
+
+            &:last-child {
+                margin-left: auto;
+            }
+        }
+    }
+
+    .shs-image-3 {
+        @include media-breakpoint-up(md) {
+            bottom: 0;
+            right: 29%;
+            left: calc(58.5% - #{rem(134)});
+            z-index: 2;
+            height: 21.726vw;
+        }
+
+        @include media-breakpoint-down(sm) {
+            width: 35%;
+            flex: 0 0 35%;
+            text-align: right;
+            margin: -13% rem(12) 0 auto;
+        }
+    }
+
+    .shs-decoration {
+        z-index: -1;
+        width: rem(260);
+        max-width: 50%;
+        right: rem(195);
+        top: 0;
+        bottom: rem(-133);
+        overflow: hidden;
+
+        @include media-breakpoint-down(sm) {
+            bottom: rem(44);
+            top: auto;
+            height: 45vw;
+            min-height: rem(155);
+            max-height: rem(350);
+            right: auto;
+            width: 50%;
+            left: -2%;
+        }
+
+        &:after {
+            content: '';
+            background-color: $orange;
+            bottom: 0;
+            left: 0;
+            width: rem(519);
+            height: rem(519);
+            display: block;
+            border-radius: 999px 0 0 999px;
+            position: absolute;
+
+            @include media-breakpoint-down(sm) {
+                border-radius: 999px 0 0 999px;
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+}

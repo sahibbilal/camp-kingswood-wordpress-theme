@@ -1,0 +1,128 @@
+.block-home-cta {
+	display: flex;
+	justify-content: center;
+	padding-top: 51.5rem;
+	padding-bottom: 11.8rem;
+	position: relative;
+	.block-story-content-image + & {
+		margin-top: -13rem;
+
+		@include media-breakpoint-down(sm) {
+			margin-top: -26.7rem;
+		}
+	}
+
+	@include media-breakpoint-down(sm) {
+		padding-top: 31.5rem;
+		padding-bottom: 8.2rem;
+	}
+
+	&__inner {
+		max-width: 85rem;
+		position: relative;
+		z-index: 3;
+		margin: 0 auto;
+		text-align: center;
+	}
+
+	&__title {
+		color: $white;
+	}
+
+	&__background {
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		background: #4684a9;
+
+		&::after {
+			width: 100%;
+			height: 37.4rem;
+			top: 0;
+			left: 0;
+			background: linear-gradient(
+                180deg,
+                $body-color 0%,
+                rgba($body-color, 0) 21.8rem
+            ),
+            linear-gradient(180deg, #ffffff 0%, rgba($body-color, 0));
+
+			@include pseudo();
+		}
+
+        &.fade-to-white {
+            &::after {
+                background: linear-gradient(
+                    180deg,
+                    #ffffff 0%,
+                    rgba(255, 255, 255, 0) 21.8rem
+                ),
+                linear-gradient(180deg, #ffffff 0%, rgba(255, 255, 255, 0));
+            }
+        }
+
+		&::before {
+			width: 100%;
+			height: 44.1rem;
+			z-index: 3;
+			bottom: 0;
+			left: 0;
+			background: linear-gradient(
+				180deg,
+				rgba(0, 0, 0, 0) 0%,
+				rgba(0, 0, 0, 0.75) 100%
+			);
+
+			@include pseudo();
+		}
+
+		img {
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			z-index: 2;
+			top: 0;
+			left: 0;
+			object-fit: cover;
+			object-position: 50% 98.5%;
+
+			@include media-breakpoint-down(sm) {
+				object-position: 35% 94.5%;
+			}
+		}
+	}
+
+	&__button-wrapper {
+		margin-top: 4.3rem;
+
+		@include media-breakpoint-down(sm) {
+			margin-top: 2.8rem;
+		}
+	}
+
+	&__button {
+		margin: 0;
+
+		@include media-breakpoint-down(sm) {
+			width: 100%;
+			padding-top: 1.3rem;
+			padding-bottom: 1.3rem;
+		}
+
+		&--1 {
+			@include media-breakpoint-down(sm) {
+				margin-bottom: 1.4rem;
+			}
+
+			border-color: $white;
+		}
+
+		&--2 {
+			color: $white;
+			border-color: $white;
+			background-color: transparent;
+		}
+	}
+}

@@ -1,0 +1,40 @@
+.block-contact {
+    padding: 12.9rem 0 8.4rem;
+
+    position: relative;
+
+    @include media-breakpoint-down(sm) {
+        padding: 5rem 0 5.6rem;
+    }
+
+    &__row {
+        display: grid;
+
+        grid-template-columns: 1fr 1fr;
+
+        column-gap: 3rem;
+        @include media-breakpoint-down(sm) {
+            display: block;
+        }
+    }
+
+    &__content-wrapper {
+        max-width: 52rem;
+    }
+
+    .underlined-heading {
+        margin-top: 1rem;
+    }
+
+    .overline {
+        @include media-breakpoint-down(sm) {
+            text-align: left;
+        }
+    }
+
+    &__form-wrapper {
+        @include media-breakpoint-down(sm) {
+            margin-top: 2.8rem;
+        }
+    }
+}

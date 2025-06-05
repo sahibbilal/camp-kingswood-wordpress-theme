@@ -1,0 +1,285 @@
+{
+
+	"theme_name": "campKingswood",
+
+	"acf_options": {
+		"init": true,
+		"page_title": "Theme Options",
+		"menu_title": "Theme Options",
+		"menu_slug": "theme-options",
+		"subpages": {
+			"general": {
+				"page_title": "Theme General Settings",
+				"menu_title": "General",
+                "post_id": "options"
+			},
+			"header": {
+				"page_title": "Theme Header Settings",
+				"menu_title": "Header",
+                "post_id": "options"
+			},
+			"footer": {
+				"page_title": "Theme Footer Settings",
+				"menu_title": "Footer",
+                "post_id": "options"
+			},
+			"blog": {
+				"page_title": "Blog Index",
+				"menu_title": "Blog Index",
+                "post_id": "blog-options"
+			}
+		}
+	},
+
+	"enqueue_styles": {
+        "fonts": "//use.typekit.net/bxa6mpg.css",
+        "slick": "css/vendor/slick/slick.css",
+		"theme-styles": "css/style.css",
+		"style": "style.css"
+	},
+
+	"enqueue_scripts": {
+		"slick": "js/vendor/slick.min.js",
+		"youtube": "js/vendor/jquery.mb.YTPlayer.min.js"
+	},
+
+	"enqueue_admin_styles": {
+		"admin-styles": "css/admin-style.css",
+        "fonts": "//use.typekit.net/wqa2zyp.css"
+	},
+
+	"enqueue_built_in_scripts": [
+
+	],
+
+	"register_nav_menus": {
+        "primary": "Main Navigation",
+        "sub-navigation": "Sub Navigation",
+        "footer": "Footer Quick Links"
+	},
+
+	"theme_widgets_init": {
+		"Primary": {
+			"name": "Primary Widget Area",
+			"id": "primary_widget_area"
+		}
+	},
+
+	"enable_shortcodes_fix": true,
+
+	"enable_thumbnails": true,
+
+	"thumbnails": [
+		[
+			"fullwidth",
+			1680,
+			9999,
+			false
+		],
+		[
+			"post-hero",
+			1680,
+			840,
+			true
+		],
+		[
+			"hero",
+			1680,
+			734,
+			true
+		],
+		[
+			"hero-side",
+			630,
+            416,
+            true
+		],
+		[
+			"thumbnail-content-image",
+			410,
+			232,
+			true
+		],
+		[
+			"menu-image",
+			300,
+			168,
+			true
+		],
+        [
+            "slider-image-full",
+            920,
+            999,
+            false
+        ],
+		[
+			"slider-image-small",
+			410,
+			512,
+			true
+		],
+        [
+            "main-logo",
+            200,
+            200,
+            false
+        ],
+        [
+            "full-width-block",
+            900,
+            999,
+            false
+        ],
+        [
+            "standard-width-block",
+            570,
+            999,
+            false
+		],
+		[
+			"composition-img-one",
+			575,
+			378,
+			true
+		],
+		[
+			"composition-img-two",
+			345,
+			345,
+			true
+		],
+		[
+			"composition-img-three",
+			402,
+			259,
+			true
+		],
+		[
+			"story-content-img",
+			764,
+			9999,
+			false
+		],
+		[
+			"thumbnail-square-big",
+			527,
+			527,
+			true
+		],
+		[
+			"thumbnail-square-medium",
+			375,
+			375,
+			true
+		],
+		[
+			"content-large-image",
+			889,
+			649,
+			true
+		],
+        [
+            "shs-large",
+            1000,
+            9999,
+            false
+        ],
+        [
+            "shs-small",
+            600,
+            9999,
+            false
+        ]
+	]
+}
+
+/* ================================================================ */
+/* ========================= EXAMPLE CODE ========================= */
+/* ================================================================ */
+
+/*
+{
+
+	"theme_name" : "campKingswood",
+
+	"acf_options": {
+		"init": true,
+		"page_title": "Theme Options",
+		"menu_title": "Theme Options",
+		"menu_slug": "theme-options",
+		"subpages": {
+			"subpage_1": {
+				"page_title": "Theme General Settings",
+				"menu_title": "General"
+			},
+			"subpage_2": {
+				"page_title": "Theme Header Settings",
+				"menu_title": "Header"
+			},
+			"subpage_3": {
+				"page_title": "Theme Footer Settings",
+				"menu_title": "Footer"
+			}
+		}
+	},
+
+	"register_nav_menus" : {
+		"primary" : "Main Navigation"
+	},
+
+	"enqueue_styles": {
+		"style": {
+			"src" : "style.css",
+			"deps": [ ],
+			"ver": "1.0",
+			"media": "all"
+		},
+
+		"simple": "css/simple.css"
+	},
+
+	"enqueue_scripts": {
+		"script": {
+			"src" : "js/script.js",
+			"deps": [ ],
+			"ver": "1.0",
+			"in_footer": true
+		},
+
+		"simple": "js/simple.js"
+	},
+
+	"enqueue_built_in_scripts": [
+		"jquery-ui-core", "iris", "underscore"
+	],
+
+	"theme_widgets_init" : {
+		"Primary" : {
+			"name" : "Primary Widget Area",
+			"id" : "primary_widget_area",
+			"before_widget" : "<div id='%1$s' class='widget %2$s'>",
+			"after_widget" : "</div>",
+			"before_title" : "<h3 class='widget-title'>",
+			"after_title" : "</h3>"
+		}
+	},
+
+	"enable_thumbnails" : true,
+
+	"thumbnails": [
+		[
+			"thumbnail-name-1",
+			800,
+			600,
+			["left", "top"]
+		],
+		[
+			"thumbnail-name-2",
+			400,
+			300,
+			true
+		]
+	]
+
+}
+*/

@@ -1,0 +1,84 @@
+// Variables
+//
+// Variables should follow the `$component-state-property-size` formula for
+// consistent naming. Ex: $nav-link-disabled-color and $modal-content-box-shadow-xs.
+
+//
+// Color system
+//
+
+// stylelint-disable
+$primary: #db3a00;
+$primary-hover: #bd3200;
+
+$body-color: #f3f1ec;
+
+$orange: #f27835;
+$orange-1: $orange;
+$orange-2: #f6943e;
+$orange-3: #f2b752;
+
+$black: #000;
+$dark: #062a40;
+$dark-blue: #093d5d;
+$darkest-blue: #041927;
+$gray-30: #3d505c;
+$gray-45: #5c788a;
+$gray-70: #a3b6c2;
+$gray-88: #dbe2e7;
+$gray-94: #f0f0f0;
+$gray-97: #f6f8f9;
+$white: #fff;
+
+$black: $black;
+$light: $white;
+
+$grays: ();
+$grays: map-merge(
+	(
+		"30": $gray-30,
+		"45": $gray-45,
+		"70": $gray-70,
+		"88": $gray-88,
+		"94": $gray-94,
+		"97": $gray-97,
+	),
+	$grays
+);
+
+$theme-colors: ();
+$theme-colors: map-merge(
+	(
+		"primary": $primary,
+		"light": $light,
+		"dark": $dark,
+		"dark-blue": $dark-blue,
+	),
+	$theme-colors
+);
+// stylelint-enable
+
+// Links
+$link-color: $black;
+$link-hover-color: $black;
+
+// Grid breakpoints
+//
+// Define the minimum dimensions at which your layout will change,
+// adapting to different screen sizes, for use in media queries.
+$grid-breakpoints: (
+	xs: 0,
+	sm: 576px,
+	md: 768px,
+	lg: 992px,
+	xl: 1200px,
+	xxl: 1460px,
+);
+
+$container-max-widths: (
+    xs: 540px,
+	sm: 720px,
+	md: 960px,
+	lg: 1140px,
+	xl: 1320px,
+);

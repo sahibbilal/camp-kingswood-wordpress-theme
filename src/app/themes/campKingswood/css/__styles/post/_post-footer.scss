@@ -1,0 +1,51 @@
+.post-footer {
+    @include responsive-values('padding-top', 129, 31);
+    @include responsive-values('padding-bottom', 92, 42);
+
+    &__tag-heading {
+        font-size: rem(12);
+        line-height: rem(16);
+        letter-spacing: rem(2.2);
+        text-transform: uppercase;
+        font-weight: 700;
+        margin-bottom: rem(6);
+    }
+
+    &__tag-col {
+        a {
+            text-decoration: none !important;
+            border: none !important;
+            font-size: rem(14);
+            line-height: rem(16);
+            color: $gray-45;
+            margin-right: rem(11);
+            display: inline-block;
+
+            &:hover,
+            &:focus {
+                color: $primary;
+            }
+        }
+
+        @include media-breakpoint-down(sm) {
+            margin-bottom: rem(28);
+        }
+    }
+
+    &__a2a-col {
+        text-align: right;
+
+        @include media-breakpoint-down(sm) {
+            text-align: left;
+        }
+    }
+
+    .addtoany_list {
+        margin-right: rem(-8);
+
+        @include media-breakpoint-down(sm) {
+            margin-left: rem(-8);
+            margin-right: auto;
+        }
+    }
+}

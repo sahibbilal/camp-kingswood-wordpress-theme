@@ -1,0 +1,207 @@
+.main-footer {
+	color: $white;
+	background-color: $dark; 
+
+    &__heading,
+    h1, h2, h3, h4, h5, h6 {
+        color: $white;
+    }
+
+    a {
+        color: $white;
+        text-decoration: none;
+
+        &:hover,
+        &:focus {
+            color: $primary;
+        }
+    }
+
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        column-count: 2;
+        break-inside: avoid-column;
+        margin-bottom: rem(20);
+
+        @include media-breakpoint-down(sm) {
+            margin-bottom: rem(48);
+        }
+
+        li {
+            font-size: rem(16);
+            line-height: rem(24);
+
+            @include media-breakpoint-down(xs) {
+                text-align: left;
+            }
+        }
+    }
+
+    &__social-icons {
+        display: flex;
+        flex-direction: row;
+        margin-left: rem(-8);
+
+        @include media-breakpoint-down(sm) {
+            justify-content: center;
+            margin: rem(25) 0 rem(41) 0;
+        }
+    }
+
+    &__social-icon {
+        display: block;
+        padding: rem(7);
+        margin-right: rem(1);
+    }
+
+    &__heading {
+        font-family: $font-base;
+        font-size: rem(12);
+        line-height: rem(16);
+        letter-spacing: rem(1.8);
+        font-weight: 800;
+        text-transform: uppercase;
+        margin-bottom: rem(17);
+
+        p + & {
+            margin-top: rem(36);
+        }
+    }
+
+    &__top {
+        font-size: rem(16);
+        line-height: rem(24);
+        padding-top: rem(64);
+        padding-bottom: rem(47);
+
+        @include media-breakpoint-down(sm) {
+            text-align: center;
+            padding-bottom: rem(30);
+        }
+
+        p {
+            margin-bottom: rem(16);
+        }
+    }
+
+    &__bottom {
+        font-size: rem(12);
+        line-height: rem(16);
+        background-color: $darkest-blue;
+        padding-top: rem(8);
+        padding-bottom: rem(8);
+
+        @include media-breakpoint-down(md) {
+            padding-top: rem(16);
+        }
+
+        @include media-breakpoint-down(xs) {
+            padding-top: rem(12);
+            padding-bottom: rem(25);
+        }
+    }
+
+    &__col-2 {
+        @include media-breakpoint-up(lg) {
+            padding-left: rem(32);
+        }
+
+        @include media-breakpoint-down(sm) {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .main-footer__heading {
+            @include media-breakpoint-down(sm) {
+                order: 2;
+                border-top: 1px solid $white;
+                padding-top: rem(40);
+                margin-bottom: rem(28);
+            }
+        }
+
+        ul {
+            @include media-breakpoint-down(sm) {
+                order: 3;
+            }
+        }
+    }
+
+    &__col-3 {
+        @include media-breakpoint-up(md) {
+            max-width: rem(360);
+            margin-left: auto;
+        }
+
+        .main-footer__heading {
+            @include media-breakpoint-down(sm) {
+                margin-bottom: rem(22);
+            }
+        }
+    }
+
+    &__copyright-col {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        @include media-breakpoint-down(md) {
+            flex-direction: column;
+            align-items: flex-start;
+            text-align: left;
+        }
+
+        a {
+            margin-right: rem(14);
+
+            @include media-breakpoint-down(md) {
+                margin-bottom: rem(10);
+            }
+        }
+    }
+
+    &__copyright {
+        margin: auto rem(14) auto 0;
+
+        @include media-breakpoint-down(md) {
+            margin-bottom: rem(10);
+        }
+    }
+
+    &__accreditation-col {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-end;
+
+        @include media-breakpoint-down(xs) {
+            justify-content: center;
+        }
+    }
+
+    &__accreditation-link {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        transition: opacity 0.2s ease-in-out;
+
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+
+    &__accreditation-logo {
+        margin-left: rem(42);
+        max-width: rem(100);
+
+        @include media-breakpoint-down(sm) {
+            margin-left: rem(12);
+        }
+
+        @include media-breakpoint-down(xs) {
+            margin: 0 rem(10);
+        }
+    }
+}

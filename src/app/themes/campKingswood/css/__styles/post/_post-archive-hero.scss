@@ -1,0 +1,23 @@
+.post-archive-hero {
+    @include responsive-values('padding-top', 50, 30);
+    @include responsive-values('padding-bottom', 80, 46);
+
+    text-align: center;
+
+    &__pre-heading {
+        font-size: rem(16);
+        line-height: rem(24);
+        font-weight: 600;
+        margin-bottom: rem(3);
+    }
+
+    &__heading {
+        @include media-breakpoint-down(sm) {
+            margin-bottom: 0;
+        }
+    }
+
+    .back-link-wrapper {
+        @include responsive-values('margin-bottom', 11, 16);
+    }
+}

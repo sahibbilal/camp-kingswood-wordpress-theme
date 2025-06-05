@@ -1,0 +1,214 @@
+.hero-home {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: calc((var(--vh, 1vh) * 100) - #{rem(36)});
+	padding: rem(140) 0;
+	position: relative;
+	color: $white;
+
+    @include media-breakpoint-down(xl) {
+        min-height: calc((var(--vh, 1vh) * 100) - #{rem(20)});        
+    }    
+
+    @include media-breakpoint-down(sm) {
+        min-height: calc((var(--vh, 1vh) * 100) - #{rem(44)});        
+    }    
+
+    body.admin-bar & {
+        min-height: calc((var(--vh, 1vh) * 100) - #{rem(36)} - 32px);  
+
+        @include media-breakpoint-down(xl) {
+            min-height: calc((var(--vh, 1vh) * 100) - #{rem(20)} - 32px);   
+        }
+        
+        @media screen and (max-width: 782px) {
+            min-height: calc((var(--vh, 1vh) * 100) - #{rem(20)} - 46px);   
+        }
+    }
+
+    body.announcement-bar & {
+        min-height: calc((var(--vh, 1vh) * 100) - #{rem(36)} - var(--ab, 32px));  
+
+        @include media-breakpoint-down(xl) {
+            min-height: calc((var(--vh, 1vh) * 100) - #{rem(20)} - var(--ab, 32px));   
+        }
+        
+        @include media-breakpoint-down(sm) {
+            min-height: calc((var(--vh, 1vh) * 100) - #{rem(44)} - var(--ab, 48px));   
+        }
+    }
+
+    body.admin-bar.announcement-bar & {
+        min-height: calc((var(--vh, 1vh) * 100) - #{rem(36)} - var(--ab, 32px) - 32px);  
+
+        @include media-breakpoint-down(xl) {
+            min-height: calc((var(--vh, 1vh) * 100) - #{rem(20)} - var(--ab, 32px) - 32px);   
+        }
+        
+        @media screen and (max-width: 782px) {
+            min-height: calc((var(--vh, 1vh) * 100) - #{rem(20)} - var(--ab, 32px) - 46px);
+        }
+        
+        @include media-breakpoint-down(sm) {
+            min-height: calc((var(--vh, 1vh) * 100) - #{rem(44)} - var(--ab, 48px) - 46px);
+        }
+    }
+
+	&__scroll-text {
+		position: absolute;
+		z-index: 99;
+		bottom: rem(76);
+		left: 50%;
+		transform: translateX(-50%);
+
+		@include media-breakpoint-down(sm) {
+			bottom: rem(30);
+		}
+	}
+
+	&__title {
+		color: $white;
+
+        @include responsive-values('font-size', 92, 34);
+        @include responsive-values('line-height', 92, 40);
+
+		@include media-breakpoint-down(sm) {
+			margin-bottom: rem(24);
+		}
+	}
+
+	&__inner {
+		max-width: rem(720);
+		position: relative;
+		z-index: 5;
+		transform: translateY(-10%);
+		text-align: center;
+	}
+
+	&__bg-img {
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		z-index: 3;
+		top: 0;
+		left: 0;
+		img {
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+			object-fit: cover;
+		}
+
+		&:after {
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			background-color: rgba(#000000, 0.3);
+
+			@include pseudo();
+		}
+	}
+
+	&__video-bg {
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		z-index: 4;
+		top: 0;
+        overflow: hidden;
+		left: 0;
+
+		@include media-breakpoint-down(sm) {
+			display: none;
+		}
+	}
+
+	&__play {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		padding: rem(16) rem(24);
+		position: relative;
+		font-size: rem(16);
+		font-weight: 800;
+		line-height: rem(24);
+		color: $primary;
+		letter-spacing: rem(0.5);
+		border: none;
+		border-radius: rem(40);
+		background-color: $white;
+
+		span,
+		svg {
+			position: relative;
+			z-index: 2;
+		}
+
+		span {
+			margin-left: rem(10);
+		}
+
+		path {
+			fill: $primary;
+		}
+
+		&::before {
+			width: 100%;
+			height: 100%;
+			z-index: 0;
+			top: 50%;
+			left: 50%;
+			border-radius: rem(40);
+			background-color: $white;
+			opacity: 0;
+			transition: all 0.3s ease-out;
+			animation: pulse-border 1.2s ease-out infinite;
+
+			@include pseudo();
+		}
+	}
+
+	&__lightbox {
+		display: flex;
+		align-items: center;
+		width: 100%;
+		height: 100%;
+	}
+
+    &__button-wrapper {
+        justify-content: center;
+
+        .c-btn {
+            width: auto !important;
+        }
+
+        .c-btn-wrapper {
+            margin-bottom: rem(10);
+        }
+
+        .c-btn-color-alt {
+            &:hover,
+            &:focus {
+                background-color: $primary !important;
+                border-color: $primary !important;
+                color: $white !important;
+            }
+        }
+    }
+
+	.section-texture--bottom {
+		@include media-breakpoint-down(sm) {
+			bottom: rem(-14);
+            height: rem(60);
+		}
+	}
+
+	.lightbox {
+		background-color: $body-color;
+	}
+}
+

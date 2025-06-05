@@ -1,0 +1,30 @@
+.post-index-hero {
+    @extend .paper-bg;
+
+    position: relative;
+    background-color: $dark-blue;
+    color: $white;
+
+    @include responsive-values('padding-top', 111, 30);
+    @include responsive-values('padding-bottom', 111, 38);
+    @include responsive-values('margin-bottom', 53, 8);
+
+    &__heading {
+        color: $white;
+    }
+
+    &__heading-col {
+        &:only-child {
+            text-align: center;
+        }
+    }
+
+    &__text-col {
+        padding-bottom: rem(41);
+    }
+
+    &__row {
+        align-items: center;
+        justify-content: center;
+    }
+}

@@ -1,0 +1,181 @@
+.post-hero {
+    text-align: center;
+    background-color: $dark;
+    color: $white;
+
+    @include responsive-values('padding-top', 65, 26);
+
+    > .container {
+        @include responsive-values('padding-bottom', 112, 62);
+    }
+
+    + section {
+        &.block-content {
+            @include responsive-values('padding-top', 113, 48);
+        }
+    }
+
+    &__heading {
+        color: $white;
+        font-weight: 600;
+
+        @include responsive-values('font-size', 48, 34);
+        @include responsive-values('line-height', 56, 40);
+        @include responsive-values('margin-bottom', 25, 25);
+    }
+
+    &__featured-image {
+        width: 100%;
+        height: auto;
+    }
+
+    .post-categories {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        position: relative;
+
+        @include media-breakpoint-down(xs) {
+            margin-bottom: rem(11);
+        }
+
+        li {
+            display: block;
+            margin: rem(6) rem(16) rem(6) 0;
+
+            @include media-breakpoint-down(xs) {
+                margin-left: rem(3);
+                margin-right: rem(3);
+            }
+        }
+
+        a {
+            text-decoration: none;
+            color: $white;
+            font-size: rem(16);
+            line-height: rem(24);
+            font-weight: 700;
+            text-transform: uppercase;
+            border: 2px solid $primary !important;
+            border-radius: 999px;
+            display: block;
+            padding: rem(6) rem(15);
+            letter-spacing: rem(2);
+            transition: background-color 0.2s linear;
+            white-space: nowrap;
+
+            &:hover {
+                background-color: $primary;
+            }
+        }
+
+        &:not(:last-child) {
+            margin-right: rem(16);
+
+            @include media-breakpoint-down(xs) {
+                margin-right: 0;
+            }
+
+            &:after {
+                width: 1px;
+                content: '';
+                background-color: $white;
+                position: absolute;
+                top: rem(17);
+                bottom: rem(17);
+                right: 0;
+
+                @include media-breakpoint-down(xs) {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    .back-link {
+        color: $white;
+
+        &:hover {
+            color: $primary;
+        }
+    }
+
+    &__top-meta {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+
+        @include responsive-values('margin-bottom', 18, 18);
+    }
+
+    &__meta {
+        font-size: rem(16);
+        line-height: rem(24);
+        font-weight: 600;
+
+        @include media-breakpoint-down(sm) {
+            font-size: rem(14);
+            line-height: rem(16);
+            font-weight: 400;
+        }
+    }
+
+    &__read-time {
+        font-size: rem(12);
+        line-height: rem(16);
+        text-transform: uppercase;
+        letter-spacing: rem(1.8);
+        padding-bottom: rem(2);
+        white-space: nowrap;
+        font-weight: 800;
+
+        @include media-breakpoint-down(xs) {
+            flex: 0 0 100%;
+            text-align: center;
+            padding-bottom: 0;
+        }
+
+        &:not(:first-child) {
+            text-align: left;
+
+            @include media-breakpoint-down(xs) {
+                text-align: center;
+            }
+        }
+    }
+
+    &__author {
+        position: relative;
+
+        &:not(:last-child) {
+            margin-right: rem(12);
+            padding-right: rem(18);
+
+            @include media-breakpoint-down(sm) {
+                margin-right: rem(8);
+                padding-right: rem(12);
+            }
+
+            &:after {
+                width: 1px;
+                content: '';
+                background-color: $white;
+                position: absolute;
+                top: rem(-3);
+                bottom: rem(-3);
+                right: 0;
+
+                @include media-breakpoint-down(sm) {
+                    top: rem(-1);
+                    bottom: rem(-1);
+                }
+            }
+        }
+    }
+}

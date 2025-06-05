@@ -1,0 +1,125 @@
+.acf-postbox {
+    border-radius: 2px;
+
+    .postbox-header,
+	.hndle {
+		background-color: $primary;
+		color: $white !important;
+        border-radius: 2px 2px 0 0;
+
+		a {
+			color: $white !important;
+		}
+	}
+
+	.toggle-indicator {
+		color: $white !important;
+	}
+}
+
+.acf-flexible-content {
+    .layout {
+        border-radius: 2px;
+
+        .acf-fc-layout-handle {
+            border-radius: 2px 2px 0 0;
+            background-color: $secondary;
+            color: $white !important;
+
+            .acf-fc-layout-handle {
+                background-color: $primary;
+            }
+        }
+
+        &[data-layout="line_break"] {
+            .acf-fc-layout-handle {
+                background-color: $yellow;
+                color: $dark !important;
+                border-color: $yellow !important;
+            }
+        }
+    }
+}
+
+.acf-row {
+	> {
+		.acf-fields,
+		.acf-row-handle {
+			border-top: 3px solid $black !important;
+		}
+	}
+}
+
+.acf-field-select,
+.acf-field-radio {
+    &[data-name="ux_icon"],
+    &[data-name="social_media_icon"],
+    &[data-name="icon"] {
+        select,
+        .acf-radio-list li {
+            font-family: 'noc' !important;
+            font-size: 2em;
+            height: 2.5rem;
+            padding: 0 rem-calc(15) 0 rem-calc(10);
+            color: $black;
+        }
+
+        .acf-radio-list {
+            max-height: rem-calc(140);
+            overflow-y: scroll;
+
+            li {
+                float: left;
+            }
+        }
+    }
+}
+
+.acf-field-group {
+    > .acf-label {
+        background-color: $gray-600;
+        color: $white;
+        margin-bottom: 0 !important;
+        padding: rem-calc(6 10 3 10);
+    }
+
+    .acf-field-group {
+        > .acf-label {
+            background-color: $blue;
+            color: $dark;
+        }
+
+        .acf-field-group {
+            > .acf-label {
+                background-color: $gray-200;
+                color: $dark;
+            }
+        }
+    }
+}
+
+#side-sortables {
+    .postbox-header,
+    .ui-sortable-handle {
+		background-color: $primary;
+		color: $white !important;
+    }
+        
+	.toggle-indicator {
+		color: $white !important;
+	}
+
+    .acf-range-wrap {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        input[type="number"] {
+            min-width: 50px !important;
+        }
+
+        input[type="range"] {
+            max-width: 45%;
+        }
+    }
+}

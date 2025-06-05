@@ -1,0 +1,41 @@
+.block-about {
+	position: relative;
+	background-color: $white;
+    padding-bottom: rem(50);
+
+    @include responsive-values('margin-bottom', 100, 55);
+    @include responsive-values('padding-top', 102, 68);
+
+	.container {
+		overflow: hidden;
+	}
+
+	&__content-wrapper {
+		max-width: rem(880);
+		position: relative;
+		z-index: 2;
+		margin: 0 auto;
+
+        > p:first-child {
+            > img:first-child {
+                margin-top: 0;
+                margin-bottom: 0;
+            }
+        }
+	}
+
+    &__logo-wrapper {
+        text-align: center;
+        margin-bottom: rem(25);
+    }
+
+    &__logo {
+        &[src$="svg"] {
+            width: rem(220);
+        }
+    }
+
+	.section-texture {
+		z-index: 0;
+	}
+}

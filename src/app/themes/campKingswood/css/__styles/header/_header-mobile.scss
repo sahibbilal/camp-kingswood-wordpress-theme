@@ -1,0 +1,93 @@
+/* Main Header Mobile */
+.btn-hamburger {
+	display: none;
+	width: 2.5rem;
+	height: 1.8rem;
+	padding: rem(22);
+	z-index: 9999;
+	margin: 0;
+	border: 0;
+	outline: 0;
+	background: transparent;
+	box-shadow: none;
+	cursor: pointer;
+    position: relative;
+
+	@include media-breakpoint-down(lg) {
+		display: block;
+		width: 2rem;
+		height: 1.5rem;
+		margin: 0;
+	}
+
+	&:hover,
+	&:focus {
+		outline: 0;
+	}
+
+	span {
+		display: block;
+		width: 2.5rem;
+		height: 0.2rem;
+		position: absolute;
+		left: rem(11);
+		transform: rotate(0deg);
+		border-radius: 0.9rem;
+		background: $dark-blue;
+		opacity: 1;
+		transition: 0.45s ease-in-out;
+
+		@include media-breakpoint-down(lg) {
+			width: 2rem;
+		}
+	}
+
+	span:nth-child(1) {
+		top: rem(15);
+		transform-origin: left center;
+	}
+
+	span:nth-child(2) {
+		top: rem(23);
+		transform-origin: left center;
+
+		@include media-breakpoint-down(lg) {
+			top: rem(21);
+		}
+	}
+
+	span:nth-child(3) {
+		top: rem(31);
+		transform-origin: left center;
+
+		@include media-breakpoint-down(lg) {
+			top: rem(27);
+		}
+	}
+
+	.open & span {
+		background-color: $primary !important;
+	}
+
+	.open & span:nth-child(1) {
+		top: rem(14);
+		left: rem(13);
+		transform: rotate(45deg);
+	}
+
+	.open & span:nth-child(2) {
+		width: 0;
+		opacity: 0;
+	}
+
+	.open & span:nth-child(3) {
+		top: rem(31);
+		left: rem(13);
+		transform: rotate(-45deg);
+
+		@include media-breakpoint-down(lg) {
+			top: rem(28);
+		}
+	}
+}
+

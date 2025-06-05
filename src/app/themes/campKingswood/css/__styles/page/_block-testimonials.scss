@@ -1,0 +1,136 @@
+.block-testimonials {
+    @extend .paper-bg;
+
+    color: $white;
+    text-align: center;
+
+    @include responsive-values('padding-top', 102, 58);
+    @include responsive-values('padding-bottom', 112, 80, '', 'lg');
+    @include responsive-values('margin-bottom', 124, 58);
+
+    @include media-breakpoint-down(sm) {
+        padding-bottom: rem(155);
+    }
+
+    &__slider {
+        margin: 0 auto;
+        max-width: 100%;
+    }
+
+    &__slide {
+        width: 100vw;
+
+        @each $breakpoint, $container-max-width in $container-max-widths {
+            @include media-breakpoint-up($breakpoint, $grid-breakpoints) {
+                max-width: $container-max-width;
+            }
+        }
+
+        @include media-breakpoint-down(sm) {
+            max-width: calc(100vw - #{rem(40)});
+        }
+    }
+
+    &__slide-content {
+        font-weight: 400;
+        font-style: italic;
+        max-width: rem(850);
+        margin-left: auto;
+        margin-right: auto;
+
+        @include media-breakpoint-down(lg) {
+            max-width: rem(700);
+        }
+
+        @include media-breakpoint-down(md) {
+            max-width: rem(500);
+        }
+
+        @include responsive-values('font-size', 34, 20);
+        @include responsive-values('line-height', 40, 24);
+        @include responsive-values('margin-bottom', 40, 24);
+
+        &:before {
+            @extend .icon;
+            @extend .quote-circle;
+            content: $icon-quote;
+            margin-left: auto;
+            margin-right: auto;
+            margin: 0 auto rem(34) auto;
+
+            @include media-breakpoint-down(sm) {
+                margin-bottom: rem(29);
+            }
+        }
+    }
+
+    &__name-title {
+        @include responsive-values('font-size', 16, 14);
+        @include responsive-values('line-height', 24, 16);
+    }
+
+    &__name {
+        font-weight: 600;
+
+        @include media-breakpoint-down(sm) {
+            margin-bottom: rem(4);
+        }
+    }
+
+    &__title {
+        font-weight: 400;
+    }
+
+    .slick-arrow {
+        background-color: $white !important;
+        transform: none !important;
+
+        @include media-breakpoint-down(sm) {
+            top: auto !important;
+            bottom: rem(-92);
+            width: rem(56) !important;
+            height: rem(56) !important;
+        }
+
+        &:hover,
+        &:focus {
+            background-color: $primary !important;
+
+            &:after {
+                border-color: $white !important;
+            }
+        }
+    }
+
+    .slick-prev {
+        left: rem(-54) !important;
+        right: auto !important;
+        margin: 0;
+        z-index: 2;
+
+        @include media-breakpoint-down(xl) {
+            left: rem(20) !important;
+        }
+
+        @include media-breakpoint-down(sm) {
+            left: auto !important;
+            right: calc(50% + #{rem(5)}) !important;
+        }
+    }
+
+    .slick-next {
+        right: rem(-54) !important;
+        left: auto !important;
+        margin: 0;
+        z-index: 2;
+
+        @include media-breakpoint-down(xl) {
+            right: rem(20) !important;
+        }
+
+        @include media-breakpoint-down(sm) {
+            right: auto !important;
+            left: calc(50% + #{rem(5)}) !important;
+        }
+    }
+}

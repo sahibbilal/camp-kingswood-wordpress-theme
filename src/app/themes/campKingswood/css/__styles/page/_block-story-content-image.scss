@@ -1,0 +1,155 @@
+.block-story-content-image {
+  padding-top: 125px;
+
+  position: relative;
+
+  background-color: $white;
+
+  @include media-breakpoint-down(sm) {
+    padding-top: 50px;
+  }
+
+  &__row {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    @include media-breakpoint-down(sm) {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &__content-wrapper {
+    position: relative;
+    z-index: 8;
+    padding-bottom: 6rem;
+    @include media-breakpoint-down(sm) {
+      padding-bottom: 0;
+    }
+
+    h2:not(.underlined-heading) {
+      @include media-breakpoint-down(sm) {
+        margin-bottom: 75px;
+      }
+    }
+  }
+
+  .section-texture {
+    top: 30px;
+  }
+
+  .underlined-heading {
+    margin-top: 8px;
+    margin-bottom: 60px;
+
+    @include media-breakpoint-down(sm) {
+      margin-bottom: 45px;
+    }
+  }
+
+  .overline {
+    @include media-breakpoint-down(sm) {
+      text-align: left;
+    }
+  }
+
+  &__col {
+    &--img {
+      display: flex;
+      align-items: start;
+      justify-content: flex-end;
+
+      @include media-breakpoint-down(sm) {
+        justify-content: center;
+        order: 1;
+        margin-top: 25px;
+        margin-right: -20px;
+        margin-left: -20px;
+        margin-bottom: 25px;
+      }
+    }
+
+    &--text {
+      padding-right: 15px;
+
+      @include media-breakpoint-down(sm) {
+        padding-right: 0;
+        order: 2;
+      }
+    }
+  }
+
+  &__img-wrapper {
+    position: relative;
+
+    @media screen and (min-width: 1439px) {
+      transform: translateX(60px);
+    }
+
+    &::before {
+      top: -1px;
+      right: -1px;
+      bottom: -1px;
+      left: -1px;
+
+      border: 2px solid $white;
+
+      @include media-breakpoint-down(sm) {
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+
+        border: 1px solid $white;
+
+      }
+
+      @include pseudo();
+    }
+
+    svg {
+      display: none;
+    }
+  }
+
+  &__buttons-wrapper {
+    z-index: 3;
+    position: relative;
+    margin-top: -40px;
+    
+    @include media-breakpoint-up(xl) {
+      margin-left: -20px;
+    }
+
+    @include media-breakpoint-down(md) {
+      margin-top: 20px;
+    }
+
+    @include media-breakpoint-down(sm) {
+      transform: translateY(-205px);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      order: 3;
+
+    }
+
+    @include media-breakpoint-down(xs) {
+      margin-top: 0;
+      top: 100%;
+      transform: translateY(-72px);
+    }
+
+    button {
+      margin-right: 15px;
+      
+      @include media-breakpoint-down(xs) {
+        max-width: 280px;
+        width: 100%;
+
+        margin: 0;
+      }
+    }
+  }
+}

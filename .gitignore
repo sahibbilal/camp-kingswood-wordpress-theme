@@ -1,48 +1,52 @@
-# Wordpress - ignore core, configuration, examples, uploads and logs.
-# https://github.com/github/gitignore/blob/main/WordPress.gitignore
+# Dependencies
+node_modules/
+/vendor/
 
-# Core
-#
-# Note: if you want to stage/commit WP core files
-# you can delete this whole section/until Configuration.
-/wp-admin/
-/wp-content/index.php
-/wp-content/languages
-/wp-content/plugins/index.php
-/wp-content/themes/index.php
-/wp-includes/
-/index.php
-/license.txt
-/readme.html
-/wp-*.php
-/xmlrpc.php
+# WP
+web/wp
+web/.htaccess
+web/app/plugins/*
+web/app/upgrade
+web/app/uploads
 
-# Configuration
-wp-config.php
+# Compiled assets
+web/app/themes/**/bundle.js
+web/app/themes/**/bundle.ie.js
+web/app/themes/*/css/style.css
+web/app/themes/*/css/iconfont.css
+web/app/themes/**/fonts/
+src/app/themes/**/css/__styles/_iconfont.scss
 
-# Example themes
-/wp-content/themes/twenty*/
+# Filepacks
+web/filepack*
 
-# Example plugin
-/wp-content/plugins/hello.php
+# Dotenv
+.env
+.env.*
+!.env.example
 
-# Uploads
-/wp-content/uploads/
+# No OS-specific garbage
+*~
+.DS_Store
+Thumbs.db
+thumbs.db
 
-# Log files
-*.log
+# No PhpStorm user configuration
 
-# htaccess
-/.htaccess
+## User-specific stuff:
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/terminal.xml
 
-# All plugins
-#
-# Note: If you wish to whitelist plugins,
-# uncomment the next line
-#/wp-content/plugins
+## Sensitive or high-churn files:
+.idea/dataSources.ids
+.idea/dataSources.xml
+.idea/dataSources.local.xml
+.idea/sqlDataSources.xml
+.idea/dynamic.xml
+.idea/uiDesigner.xml
 
-# All themes
-#
-# Note: If you wish to whitelist themes,
-# uncomment the next line
-#/wp-content/themes
+## Gradle:
+.idea/gradle.xml
+.idea/libraries
+web/app/themes/campKingswood/eight29-filters/.cache/

@@ -1,0 +1,210 @@
+.block-gallery-lightbox {
+	overflow: hidden;
+
+    @include responsive-values('margin-top', 81, 27);
+
+    .block-title {
+        text-align: center;
+
+        @include responsive-values('margin-bottom', 48, 24);
+    }
+}
+
+.lightbox-gallery {
+    &__thumbnails-wrapper {
+        > .row {
+            margin-left: rem(-15);
+            margin-right: rem(-15);
+
+            @include media-breakpoint-down(sm) {
+                margin-left: rem(-8);
+                margin-right: rem(-8);
+            }
+        }
+    }
+
+	&__single-thumb {
+        padding: rem(0) rem(15) rem(30) rem(15);
+        min-width: 0;
+
+        @include media-breakpoint-down(sm) {
+            padding: rem(0) rem(8) rem(16) rem(8);
+        }
+
+		img {
+			width: 100%;
+		}
+	}
+
+    &__single-thumb-image-wrapper {
+        padding-bottom: 56.3415%;
+    }
+
+	&__gallery-wrapper {
+		position: fixed;
+		z-index: 999;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		visibility: visible;
+		transition: all 300ms ease;
+		opacity: 1;
+		background-color: $dark-blue;
+
+        @extend .paper-bg;
+
+		&:not(.active) {
+			visibility: hidden;
+			opacity: 0;
+		}
+	}
+
+	&__slider {
+		max-width: 100%;
+		margin: 0 auto;
+		padding: 0;
+
+        .slick-slide {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+
+            &.slick-center {
+                .lightbox-gallery__caption {
+                    opacity: 1;
+                }
+            }
+        }
+
+        .slick-arrow {
+            background-color: $white !important;
+
+            &:hover,
+            &:focus {
+                background-color: $primary !important;
+
+                &:after {
+                    border-color: $white !important;
+                }
+            }
+        }
+
+        .slick-prev {
+            left: rem(45) !important;
+            right: auto !important;
+            margin: 0;
+            z-index: 2;
+
+            @include media-breakpoint-down(md) {
+                left: rem(20) !important;
+            }
+        }
+
+        .slick-next {
+            right: rem(45) !important;
+            left: auto !important;
+            margin: 0;
+            z-index: 2;
+
+            @include media-breakpoint-down(md) {
+                right: rem(20) !important;
+            }
+        }
+
+        .slick-list {
+            @include media-breakpoint-down(md) {
+                padding: 0 15vw !important;
+            }
+            
+            @include media-breakpoint-down(sm) {
+                padding: 0 rem(50) !important;
+            }
+            
+            @include media-breakpoint-down(xs) {
+                padding: 0 rem(20) !important;
+            }
+        }
+	}
+
+	&__single-slide {
+		position: relative;
+		padding: rem(60) 0;
+		outline: none;
+
+		@include media-breakpoint-down(sm) {
+			padding: rem(40) 0;
+		}
+
+		img {
+			width: auto;
+			margin: 0 auto;
+            max-height: rem(788);
+            border: rem(7.5) solid transparent;
+
+            @include media-breakpoint-down(lg) {
+                max-height: 40vw;
+            }
+
+            @include media-breakpoint-down(md) {
+                max-width: calc(100vw - #{rem(100)});
+                border: rem(10) solid transparent;
+            }
+
+            @include media-breakpoint-down(sm) {
+                max-height: none;
+                border: rem(5) solid transparent;
+            }
+            
+            @include media-breakpoint-down(xs) {
+                max-width: calc(100vw - #{rem(35)});
+            }
+		}
+	}
+
+	&__slide-image {
+		max-height: 100%;
+        position: relative;
+	}
+
+	&__caption {
+		text-align: center;
+        opacity: 0;
+        transition: opacity 0.2s ease-in-out;
+        color: $white;
+        font-style: italic;
+        margin-bottom: rem(5);
+
+        @include responsive-values('font-size', 18, 14);
+        @include responsive-values('line-height', 24, 18);
+        @include responsive-values('margin-top', 19, 11);
+	}
+
+	&__close { 
+		position: absolute;
+		z-index: 999;
+		top: rem(21);
+		right: rem(21);
+		display: flex;
+        align-items: center;
+        justify-content: center;
+		width: rem(24);
+		height: rem(24);
+        font-size: rem(24);
+        line-height: rem(24);
+		cursor: pointer;
+		transition: all 0.2s ease-in-out;
+        color: $primary;
+        background-color: $white;
+        width: rem(40);
+        height: rem(40);
+        border-radius: 50%;
+
+        &:hover,
+        &:focus {
+            color: $white;
+            background-color: $primary;
+        }
+	}
+}

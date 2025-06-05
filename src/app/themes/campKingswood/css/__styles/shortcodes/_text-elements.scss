@@ -1,0 +1,157 @@
+.overline-title {
+	@include media-breakpoint-down(sm) {
+		text-align: center;
+	}
+}
+
+.highlight-text {
+	padding: 3px 0;
+	background: $gray-88;
+}
+
+.underlined-heading {
+	display: block;
+	position: relative;
+	z-index: 2;
+
+    @include responsive-values('margin-bottom', 57, 42);
+
+	&::after {
+		width: 70px;
+		height: 17px;
+		left: 0;
+		background-image: url('../images/icons/zig-zag.svg');
+		background-repeat: no-repeat;
+		background-size: contain;
+
+        @include responsive-values('bottom', -37, -37);
+
+		@include pseudo();
+
+		@include media-breakpoint-down(sm) {
+			bottom: -31px;
+		}
+	}
+
+	&.text-center {
+		&::after {
+			left: 50%;
+			transform: translate(-50%);
+		}
+	}
+
+	&.text-right {
+		&::after {
+			right: 0;
+			left: auto;
+		}
+	}
+
+    &.white {
+        &:after {
+            background-image: url('../images/icons/zig-zag-white.svg');
+        }
+    }
+}
+
+.circle-mark {
+	display: inline-block;
+	position: relative;
+
+	&:before {
+		display: block;
+		width: 158%;
+        min-width: rem(272);
+		max-width: rem(500);
+		padding-bottom: calc(213% * 0.663);
+		height: 0;
+		opacity: 0.2;
+		z-index: -1;
+		top: 50%;
+		left: 50%;
+		transform: translate(-45%, -45%) rotate(23deg);
+		transform-origin: center center;
+		background-image: url(../images/icons/circle-mark.svg);
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: contain;
+
+		@include pseudo();
+	}
+}
+
+blockquote {
+    @include responsive-values('font-size', 34, 20);
+    @include responsive-values('line-height', 40, 24);
+    @include responsive-values('margin-top', 48, 33);
+    @include responsive-values('margin-bottom', 48, 33);
+    @include responsive-values('padding-left', 45, 20);
+
+    font-weight: 400;
+    font-style: italic;
+    position: relative;
+
+    &:first-child {
+        margin-top: 0;
+    }
+
+    &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 12px;
+        background-color: $orange-2;
+        border-left: 4px solid $orange;
+        border-right: 4px solid $orange-3;
+
+        @include media-breakpoint-down(sm) {
+            left: rem(-6);
+        }
+    }
+
+    &.alternate {
+        @include responsive-values('padding-bottom', 40, 40);
+    }
+
+    .author {
+        position: absolute;
+        top: 100%;
+        right: rem(20);
+        display: block;
+        padding-left: rem(20);
+        
+        @include responsive-values('font-size', 18, 13);
+        @include responsive-values('line-height', 22, 16);
+        @include responsive-values('margin-top', -30, -30);
+
+        &:before {
+            content: '-';
+        }
+    }
+}
+
+.back-link-wrapper {
+    text-align: left;
+
+    @include responsive-values('margin-bottom', 40, 16);
+}
+
+.back-link {
+    text-decoration: none !important;
+    font-size: rem(16);
+    line-height: rem(24);
+    font-weight: 700;
+    letter-spacing: rem(0.5);
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+
+    &:before {
+        @extend .icon;
+        content: $icon-chev-left;
+        margin-right: rem(10);
+        margin-top: rem(-2);
+    }
+}
